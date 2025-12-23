@@ -3,8 +3,11 @@
 @tailwind utilities;
 
 @layer base{
+
+  /* bg-gradient-to-br from-black  via-emerald-950 to-green-900 */
     body{
-        @apply w-screen h-fit bg-gradient-to-b from-emerald-900  via-emerald-950 to-black
+      background-image: url("../src//assets//aigen.jpeg");
+        @apply w-screen h-fit  bg-cover content-normal  backdrop-blur  backdrop-brightness-90  
     }
 
     .BotMsg{
@@ -17,7 +20,7 @@
     }
 
      .scrollbar-green::-webkit-scrollbar {
-    width: 8px;
+    width: 6px;
   }
 
   .scrollbar-green::-webkit-scrollbar-track {
@@ -25,6 +28,6 @@
   }
 
   .scrollbar-green::-webkit-scrollbar-thumb {
-    background-color: #22c55e;
+    background-color: #bdcfc4;
     border-radius: 9999px;
 }}

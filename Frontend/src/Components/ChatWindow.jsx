@@ -1,6 +1,7 @@
 import React, { useEffect, useRef, useState } from "react";
 import api from "../Axios";
 import { LuBot } from "react-icons/lu";
+import {motion} from "framer-motion";
 
 const ChatWindow = ({ message = [], setMessage, activeChatId }) => {
   const [input, setInput] = useState("");
@@ -78,29 +79,32 @@ const ChatWindow = ({ message = [], setMessage, activeChatId }) => {
 
   return (
 
-    <div className="flex flex-col h-[95vh] p-6 w-full -mt-8">
+    <motion.div className="flex flex-col h-[95vh] p-6 w-full -mt-8 "
+    initial={{x:25}}
+          animate={{ x:0 }}
+          transition={{ duration: 2.3, ease: "easeOut" }}>
 
       {/* Messages */}
-      <div className="flex-1 overflow-y-auto space-y-4 scrollbar-green bg-black/40 rounded-lg p-6">
+      <div className="flex-1 overflow-y-auto space-y-4 scrollbar-green bg-black/75 rounded-lg p-12 backdrop-blur-xl">
         {!activeChatId ? (
-          <p className="text-green-500 text-center mt-20">
+          <p className="text-gray-200 text-center mt-20">
             Select or create a chat to start
           </p>
         ) : (
           message.map((msg, index) => (
             <div
               key={index}
-              className={`max-w-[70%] p-3 rounded-lg whitespace-pre-line  ${
+              className={`max-w-[70%] p-4 rounded-lg whitespace-pre-line  ${
                 msg.role === "user"
-                  ? "bg-black/35 flex flex-row justify-start  shadow-lg shadow-black w-[65vh] text-green-600 ml-auto"
-                  : " flex flex-row justify-center align-top -ml-4 z-20 text-green-400 mr-auto" }`}>
-             { msg.role === "assistant" && <LuBot size={200} className="m-7"/>} {msg.content}
+                  ? "bg-gray-200 flex flex-row justify-start  shadow-lg shadow-black w-[65vh] text-gray-950 ml-auto"
+                  : " bg-gray-950/50 flex flex-row justify-center align-top -ml-4 z-20 text-gray-200 mr-auto" }`}>
+             { msg.role === "assistant" && <LuBot size={100} className="mr-4"/>} {msg.content}
             </div>
           ))
         )}
 
         {loading && (
-          <div className="text-green-700 text-sm mr-auto">
+          <div className="text-gray-200 text-sm mr-auto">
             AI is typing…
           </div>
         )}
@@ -115,7 +119,7 @@ const ChatWindow = ({ message = [], setMessage, activeChatId }) => {
             value={input}
             onChange={(e) => setInput(e.target.value)}
             placeholder="Type your message..."
-            className="flex-1 p-3 rounded-md bg-black/40 text-white outline-none"
+            className="flex-1 p-3 rounded-md bg-black/70 text-white outline-none"
             onKeyDown={(e) => e.key === "Enter" && sendMessage()}
             disabled={loading}
           />
@@ -124,7 +128,7 @@ const ChatWindow = ({ message = [], setMessage, activeChatId }) => {
             disabled={loading}
             className={`px-6 rounded-md ${
               loading
-                ? "bg-gray-600 text-gray-300 cursor-not-allowed"
+                ? "bg-black/75 text-gray-300 cursor-not-allowed"
                 : "bg-green-600 text-black hover:bg-green-700"
             }`}
           >
@@ -132,7 +136,7 @@ const ChatWindow = ({ message = [], setMessage, activeChatId }) => {
           </button>
         </div>
       )}
-    </div>
+    </motion.div>
   );
 };
 

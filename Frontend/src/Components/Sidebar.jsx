@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 import { LuLockOpen } from "react-icons/lu";
 import api from "../Axios";
 import {Navigate, useNavigate} from "react-router-dom"
+import {motion} from "framer-motion";
 
 const Sidebar = ({ chats = [], setChats, activeChatId, setActiveChatId }) => {
 
@@ -40,29 +41,33 @@ const Sidebar = ({ chats = [], setChats, activeChatId, setActiveChatId }) => {
   };
 
   return (
-    <div className='w-[60vh] scale-90 -mt-10 '>
+    <motion.div className='w-[60vh] scale-90 -mt-10 '
+     initial={{opacity:0,x:-25}}
+          animate={{ opacity: 1, scale:0.9,x:0 }}
+          transition={{ duration: 1.8, ease: "easeOut" }}
+          >
       <div className='p-2 w-full flex flex-col justify-start align-middle gap-y-2'>
 
         {/* heading Div */}
         <div>
-          <h1 className='text-4xl font-sans text-white'>Search Space</h1>
-          <p className='text-green-700 text-md'>Integrated with AI</p>
+          <h1 className='text-4xl font-sans text-black'>Search Space</h1>
+          <p className='text-gray-950 text-md'>Integrated with AI</p>
         </div>
 
         <div className='my-4'>
 
           {/* New Chat Button */}
           <button
-            className='w-full h-fit py-2 bg-white text-green-900 rounded-md hover:bg-green-700 hover:text-white duration-150 delay-75'
+            className='w-full h-fit py-2 bg-white text-green-900 rounded-md hover:bg-black hover:text-white duration-150 delay-75'
             onClick={createChat}
           >
             + New Chat
           </button>
 
           {/* Chat List */}
-          <div className="bg-black/40 text-green-500 rounded-md h-[55vh] my-5 px-4 py-4 overflow-y-auto">
+          <div className="bg-black/75 text-gray-400 scrollbar-green rounded-md h-[55vh] my-5 px-4 py-4 overflow-y-auto">
             {chats.length === 0 ? (
-              <p className="text-green-600 text-sm">No chats yet</p>
+              <p className="text-gray-200 text-sm">No chats yet</p>
             ) : (
               chats.map(chat => (
                 <div
@@ -70,8 +75,8 @@ const Sidebar = ({ chats = [], setChats, activeChatId, setActiveChatId }) => {
                   onClick={() => setActiveChatId(chat._id)}
                   className={`p-2 rounded cursor-pointer mb-2 ${
                     activeChatId === chat._id
-                      ? "bg-black/35 text-green-500"
-                      : "hover:bg-gray-700"
+                      ? "text-white"
+                      : "hover:text-gray-100"
                   }`}
                 >
                   {chat.title || "New Chat"}
@@ -83,8 +88,8 @@ const Sidebar = ({ chats = [], setChats, activeChatId, setActiveChatId }) => {
           {/* Login & Profile (UI untouched) */}
           <div className='scale-95 flex flex-col justify-start align-middle items-start -mt-2 -ml-8'>
 
-            <button className='text-2xl text-green-600 m-2 font-thin inline-flex justify-start align-middle gap-x-8 ml-8 scale-90' onClick={()=>{Navigate("/")}}>
-              <LuLockOpen className='rounded-full text-white' size={35} />
+            <button className='text-xl text-black m-2 font-thin inline-flex justify-start align-middle gap-x-8 ml-8 scale-90' onClick={()=>{Navigate("/")}}>
+              <LuLockOpen className='rounded-full text-black' size={30} />
               Login/Signup
             </button>
 
@@ -98,7 +103,7 @@ const Sidebar = ({ chats = [], setChats, activeChatId, setActiveChatId }) => {
           </div>
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 };
 

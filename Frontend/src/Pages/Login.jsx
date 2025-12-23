@@ -36,8 +36,8 @@ const Login = () => {
 
   
   return (
-    <div className=" scale-90 h-[90vh] w-screen bg-gradient-to-tr from-black via-green-800/30 to-black flex  flex-row space-x-6 justify-center align-middle items-center">
-      <h2 className="text-6xl font-sans text-green-500 p-3">Login</h2>
+    <div className=" scale-90 h-screen w-screen  flex  flex-row space-x-6 justify-center align-middle items-center rounded-3xl">
+      <h2 className="text-6xl font-sans text-black p-3">Login</h2>
       
       <div className="">
       <form onSubmit={handleSubmit} style={styles.form} className=" w-[100vh] h-fit  p-4 flex flex-col">
@@ -46,7 +46,7 @@ const Login = () => {
           placeholder="Email"
           onChange={handleChange}
           required
-          className="p-4 w-[60vh] rounded-lg text-white placeholder:text-green-500 bg-green-900/30"
+className="p-4 w-[50vh] rounded-lg text-black placeholder:text-purple-900 bg-white"
         />
         <input
           name="password"
@@ -54,12 +54,12 @@ const Login = () => {
           placeholder="Password"
           onChange={handleChange}
           required
-          className="p-4 w-[60vh] rounded-lg text-white placeholder:text-green-500 bg-green-900/30"
+className="p-4 w-[50vh] rounded-lg text-black placeholder:text-purple-900 bg-white"
 
         />
-        <p className='text-green-500 font-sans relative w-[60vh]'>if dosen't have an account ? <span className='text-lg font-sans text-white cursor-pointer' onClick={()=>navigate("/")}>Create new Account</span></p>
+        <p className='text-black font-sans relative w-[60vh]'>if dosen't have an account ? <span className='text-lg font-sans text-yellow-500 cursor-pointer' onClick={()=>navigate("/registration")}>Create new Account</span></p>
 
-        <button type="submit" className="bg-green-500 rounded-xl p-2 ml-12">Login</button>
+        <button type="submit" className="bg-black text-white rounded-xl p-2 ml-12">Login</button>
       </form>
       </div>
     </div>

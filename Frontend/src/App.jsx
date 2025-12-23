@@ -5,22 +5,26 @@ import MainpageLayout from "./Layout/MainpageLayout";
 import Profile from "./Pages/Profile";
 import Register from "./Pages/Register";
 import Login from "./Pages/Login";
-import Credits from "./Pages/Credits";
 import Chat from "./Pages/Chat";
 
 import ProtectedRoute from "./components/ProtectedRoute";
+import LandingPage from "./Pages/LandingPage";
+
 
 const App = () => {
   return (
     <div className="">
-      <TopBar />
+      {/* <TopBar /> */}
 
-      <div className="flex flex-row scale-95">
+      <div className="flex flex-row ">
+        {/* <video src={greenvid}  className="absolute z-0"/> */}
+        
         <Routes>
           {/* Public routes */}
           <Route path="/Platform" element={<MainpageLayout />} />
           <Route path="/login" element={<Login />} />
-          <Route path="/" element={<Register />} />
+          <Route path="/Registration" element={<Register />} />
+          <Route path="/" element={<LandingPage />} />
 
           {/* Protected routes */}
           <Route
