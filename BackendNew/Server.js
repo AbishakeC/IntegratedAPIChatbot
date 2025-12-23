@@ -5,6 +5,7 @@ import authRouter from "./Routes/auth.Route.js";
 import chatRouter from "./Routes/chat.Route.js";
 import messageRouter from "./Routes/message.Route.js";
 import ConnectDb from "./Configs/DB.js";
+import userRoute from "./Routes/userRoute.js"
 
 const app = express();
 dotenv.config();
@@ -30,6 +31,7 @@ app.get('/', (req, res) => {
 app.use('/api/auth', authRouter);
 app.use('/api/chat', chatRouter);
 app.use('/api/message', messageRouter);
+app.use('/api/users', userRoute);
 
 app.listen(PORT, () => { 
     console.log(`the app is running on server : ${PORT}`);

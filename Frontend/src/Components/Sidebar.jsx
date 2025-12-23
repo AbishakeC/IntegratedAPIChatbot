@@ -40,7 +40,7 @@ const Sidebar = ({ chats = [], setChats, activeChatId, setActiveChatId }) => {
   };
 
   return (
-    <div className='w-[50vh] scale-90 -mt-10'>
+    <div className='w-[60vh] scale-90 -mt-10 '>
       <div className='p-2 w-full flex flex-col justify-start align-middle gap-y-2'>
 
         {/* heading Div */}
@@ -60,7 +60,7 @@ const Sidebar = ({ chats = [], setChats, activeChatId, setActiveChatId }) => {
           </button>
 
           {/* Chat List */}
-          <div className="bg-black/40 text-green-500 rounded-md h-[55vh] my-5 px-4 py-2 overflow-y-auto">
+          <div className="bg-black/40 text-green-500 rounded-md h-[55vh] my-5 px-4 py-4 overflow-y-auto">
             {chats.length === 0 ? (
               <p className="text-green-600 text-sm">No chats yet</p>
             ) : (
@@ -88,12 +88,12 @@ const Sidebar = ({ chats = [], setChats, activeChatId, setActiveChatId }) => {
               Login/Signup
             </button>
 
-            <div className='flex flex-row justify-start align-middle content-center p-4 ml-1 scale-90 bg-black/35 hover:shadow-lg hover:shadow-green-500/30 w-full rounded-full' onClick={()=>Navigate("/Profile")}> 
+            {/* <div className='flex flex-row justify-start align-middle content-center p-4 ml-1 scale-90 bg-black/35 hover:shadow-lg hover:shadow-green-500/30 w-full rounded-full' onClick={()=>Navigate("/Profile")}> 
               <span className='bg-green-600 px-8 p-6 rounded-full text-black'>A</span>
               <h1 className='font-extrabold text-2xl text-green-600 align-middle mt-4 mx-6'>
                 Profile
               </h1>
-            </div>
+            </div> */}
 
           </div>
         </div>

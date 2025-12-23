@@ -12,7 +12,7 @@ import ProtectedRoute from "./components/ProtectedRoute";
 
 const App = () => {
   return (
-    <div>
+    <div className="">
       <TopBar />
 
       <div className="flex flex-row scale-95">
@@ -35,10 +35,7 @@ const App = () => {
           <Route
             path="/profile"
             element={
-              <ProtectedRoute>
-                <Profile />
-              </ProtectedRoute>
-            }
+                <Profile /> }
           />
         </Routes>
       </div>

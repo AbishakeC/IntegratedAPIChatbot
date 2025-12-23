@@ -22,7 +22,7 @@ export const protect = async (req, res, next) => {
     const decoded = JWT.verify(token, process.env.JWT_SECRET);
 
     // 4️⃣ Attach user
-    req.user = await User.findById(decoded.id).select("-password");
+    req.user = await User.findById(decoded.id).select("-password").lean();
 
     if (!req.user) {
       return res.status(401).json({ message: "User not found" });
