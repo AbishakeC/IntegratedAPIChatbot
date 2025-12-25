@@ -85,7 +85,7 @@ const ChatWindow = ({ message = [], setMessage, activeChatId }) => {
           transition={{ duration: 2.3, ease: "easeOut" }}>
 
       {/* Messages */}
-      <div className="flex-1 overflow-y-auto space-y-4 scrollbar-green bg-black/75 rounded-lg p-12 backdrop-blur-xl">
+      <div className="flex-1 overflow-y-auto space-y-4 scrollbar-green bg-black/60 rounded-lg p-12 backdrop-blur-xl">
         {!activeChatId ? (
           <p className="text-gray-200 text-center mt-20">
             Select or create a chat to start
@@ -97,14 +97,14 @@ const ChatWindow = ({ message = [], setMessage, activeChatId }) => {
               className={`max-w-[70%] p-4 rounded-lg whitespace-pre-line  ${
                 msg.role === "user"
                   ? "bg-gray-200 flex flex-row justify-start  shadow-lg shadow-black w-[65vh] text-gray-950 ml-auto"
-                  : " bg-gray-950/50 flex flex-row justify-center align-top -ml-4 z-20 text-gray-200 mr-auto" }`}>
+                  : " bg-black/75 flex flex-row justify-center align-top -ml-4 z-20 text-gray-200 mr-auto" }`}>
              { msg.role === "assistant" && <LuBot size={100} className="mr-4"/>} {msg.content}
             </div>
           ))
         )}
 
         {loading && (
-          <div className="text-gray-200 text-sm mr-auto">
+          <div className="text-gray-200 text-sm mr-auto animate-pulse">
             AI is typing…
           </div>
         )}
