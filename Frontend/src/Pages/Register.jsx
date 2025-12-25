@@ -35,7 +35,7 @@ const Register = () => {
   return (
     <div className="w-screen h-screen  flex flex-row justify-center align-middle items-center p-4 space-x-16 rounded scale-90  ">
       {/* <div className='bg-black/70 w-full  h-full z-10 absolute'></div> */}
-      <h2 className="text-9xl font-sans text-black z-20 p-3 ">Register</h2>
+      <h2 className="text-9xl font-sans text-white z-20 p-3 ">Register</h2>
       <form onSubmit={handleSubmit} className='flex flex-col z-20 justify-center align-middle items-center p-8 space-y-4 shadow-2xl bg-black/55 shadow-black rounded-lg'>
         <input name="name" placeholder="Name" onChange={handleChange} required                   className="p-4 w-[50vh] rounded-lg text-black placeholder:text-purple-900 bg-white"
  />

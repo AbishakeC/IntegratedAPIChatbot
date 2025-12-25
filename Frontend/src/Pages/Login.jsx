@@ -37,7 +37,7 @@ const Login = () => {
   
   return (
     <div className=" scale-90 h-screen w-screen  flex  flex-row space-x-6 justify-center align-middle items-center rounded-3xl">
-      <h2 className="text-6xl font-sans text-black p-3">Login</h2>
+      <h2 className="text-9xl h-[50vh] inline-flex justify-center items-center font-sans border-r-4 border-pink-600 rounded-lg text-white p-3">Login</h2>
       
       <div className="">
       <form onSubmit={handleSubmit} style={styles.form} className=" w-[100vh] h-fit  p-4 flex flex-col">
@@ -57,9 +57,9 @@ className="p-4 w-[50vh] rounded-lg text-black placeholder:text-purple-900 bg-whi
 className="p-4 w-[50vh] rounded-lg text-black placeholder:text-purple-900 bg-white"
 
         />
-        <p className='text-black font-sans relative w-[60vh]'>if dosen't have an account ? <span className='text-lg font-sans text-yellow-500 cursor-pointer' onClick={()=>navigate("/registration")}>Create new Account</span></p>
+        <p className='text-white font-sans relative w-[60vh] my-3'>if dosen't have an account ? <span className='text-md font-semibold text-white bg-black/40 hover:bg-pink-600/50 p-2 rounded-lg cursor-pointer' onClick={()=>navigate("/registration")}>Create new Account</span></p>
 
-        <button type="submit" className="bg-black text-white rounded-xl p-2 ml-12">Login</button>
+        <button type="submit" className="bg-black text-white rounded-xl my-2 p-2 ml-12">Login</button>
       </form>
       </div>
     </div>

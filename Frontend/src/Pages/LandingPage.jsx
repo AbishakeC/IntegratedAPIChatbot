@@ -17,7 +17,7 @@ const LandingPage = () => {
           transition={{ duration: 1.2, ease: "easeOut" }}
            whileHover={{ scale: 1.002 }}
             whileTap={{ scale: 0.95 }}>
-            <h1 className='text-[37vh]  font-sans text-black'>SearchSpace</h1>
+            <h1 className='text-[37vh]  font-sans text-white'>SearchSpace</h1>
         </motion.div>
 
 
@@ -30,14 +30,14 @@ const LandingPage = () => {
             className='flex flex-row justify-center align-middle items-center '>
                                   {/* <img src={img1} alt="" width={100} /> */}
 
-            <p className='text-xs font-semibold text-black  p-4 w-[70vh]  '> An AI-powered chat platform built with React, Node.js, MongoDB, and
+            <p className='text-xs font-semibold text-white  p-4 w-[70vh]  '> An AI-powered chat platform built with React, Node.js, MongoDB, and
           Gemini AI. Chat smarter, faster, and with context.</p>
 
         </motion.div>
         
 
         <motion.div 
-            initial={{opacity:0,y:100}}
+            initial={{opacity:0,y:20}}
             animate={{ opacity: 1,y:0}}
             transition={{ duration: 1.5, ease: "easeOut" }} 
             whileHover={{ scale: 1.05 }}

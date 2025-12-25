@@ -6,8 +6,8 @@
 
   /* bg-gradient-to-br from-black  via-emerald-950 to-green-900 */
     body{
-      background-image: url("../src//assets//aigen.jpeg");
-        @apply w-screen h-fit  bg-cover content-normal  backdrop-blur  backdrop-brightness-90  
+      background-image: url("../src//assets//purp2.jpg");
+        @apply w-screen h-fit backdrop-blur-sm bg-cover  content-center 
     }
 
     .BotMsg{
