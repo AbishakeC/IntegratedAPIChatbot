@@ -14,9 +14,7 @@ const LandingPage = () => {
         <motion.div 
           initial={{opacity:0,scale:1,y:-25}}
           animate={{ opacity: 1, scale:0.9,y:0 }}
-          transition={{ duration: 1.2, ease: "easeOut" }}
-           whileHover={{ scale: 1.002 }}
-            whileTap={{ scale: 0.95 }}>
+          transition={{ duration: 1.2, ease: "easeOut" }}>
             <h1 className='text-[37vh]  font-sans text-white'>SearchSpace</h1>
         </motion.div>
 

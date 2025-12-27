@@ -23,9 +23,35 @@ const Profile = () => {
   
 
   const logout = () => {
+
+     const confirmedDelete = window.confirm(
+      "Are you sure about Logout...."
+    )
+
+    if(!confirmedDelete) return;
+
     localStorage.removeItem("token");
     window.location.href = "/login";
   };
+
+  const DeleteAccount = async()=>{
+    const confirmedDelete = window.confirm(
+      "this will delete your profile permanently...."
+    )
+
+    if(!confirmedDelete) return;
+
+    try{
+      await api.delete("/users/deleteprofile");
+
+      localStorage.removeItem('token');
+      window.location.href="/login";
+
+    }catch(error){
+      console.error(error);
+      alert("failed to delete this account....")
+    }
+  }
 
 
   return (
@@ -42,9 +68,13 @@ This project is an AI-powered chat application built with React.js and TailwindC
             <div className='flex flex-col justify-start align-middle gap-2'>
                 <h1 className='text-6xl font-sans text-white py-2'>{profilename || "LOADING..."}</h1>
                 <h3 className='text-2xl font-sans text-white py-2'>{email || "loading email..." }</h3>
-            <div className='p-6 bg-gray-950 rounded-lg shadow-lg shadow-black'onClick={logout}>
-                <h2 className='text-white font-sans'>Logout</h2>
+            <div className='p-6 bg-gray-950 inline-flex items-center justify-center rounded-lg group shadow-lg shadow-black cursor-pointer hover:bg-white hover:text-red-600 hover:scale-110 duration-150'onClick={logout}>
+                <h2 className='text-white  group-hover:text-rose-600 font-sans'>Logout</h2>
             </div>
+                <div className='p-4 bg-gray-950 inline-flex justify-center items-center rounded-lg shadow-lg shadow-black cursor-pointer hover:bg-white hover:text-red-600 hover:scale-110 duration-150'onClick={DeleteAccount}>
+                <h2 className='text-red-600 font-sans'>Delete profile</h2>
+            </div>
+
             </div>
         </div>
 
