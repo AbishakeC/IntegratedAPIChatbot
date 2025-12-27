@@ -1,5 +1,7 @@
 # Integrated Chatbot - Full Stack Application
 
+## url : https://searchspace-c17a-ten.vercel.app/
+
 This project is a full-stack AI-integrated chatbot application featuring a **Node.js/Express Backend** and a **React/Vite Frontend**.
 
 ## Prerequisites
@@ -80,3 +82,4 @@ npm run dev
     - Click **+ New Chat** in the sidebar to start a session.
     - Type a message in the input box and press Enter.
     - The AI provider (Gemini) will reply to your queries.
+
